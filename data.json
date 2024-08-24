@@ -121,7 +121,7 @@
     "yearDiscovered": 1807,
     "block": "p",
     "cpkHexColor": "FFB5B5",
-    "period": 1,
+    "period": 2,
     "group": 13
   },
   {
@@ -672,7 +672,7 @@
     "block": "d",
     "cpkHexColor": "F090A0",
     "period": 4,
-    "group": 19
+    "group": 9
   },
   {
     "atomicNumber": 28,
@@ -1419,7 +1419,7 @@
     "density": 6.146,
     "groupBlock": "lanthanoid",
     "yearDiscovered": 1839,
-    "block": "f",
+    "block": "d",
     "cpkHexColor": "70D4FF",
     "period": 6,
     "group": 3
@@ -1769,7 +1769,7 @@
     "density": 9.841,
     "groupBlock": "lanthanoid",
     "yearDiscovered": 1907,
-    "block": "d",
+    "block": "f",
     "cpkHexColor": "00AB24",
     "period": 6,
     "group": 3
@@ -2219,7 +2219,7 @@
     "density": 10.07,
     "groupBlock": "actinoid",
     "yearDiscovered": 1899,
-    "block": "f",
+    "block": "d",
     "cpkHexColor": "70ABFA",
     "period": 7,
     "group": 3
@@ -2569,7 +2569,7 @@
     "density": "unknown",
     "groupBlock": "transition metal",
     "yearDiscovered": 1961,
-    "block": "d",
+    "block": "f",
     "cpkHexColor": "C70066",
     "period": 7,
     "group": 3
