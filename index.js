@@ -1,75 +1,30 @@
-// var elementD;
-// fetch("https://periodic-table-elements-info.herokuapp.com/elements", {
-//   method: "GET",
-// })
-//   .then((Response) => {
-//     Response.json();
-//   })
-//   .then((data) => {
-//     elementD = data;
-//     console.log("got the data");
-//   });
+fetch("data.json")
+  .then((response) => response.json())
+  .then((elements) => {
+    const tableContainer = document.getElementById("periodic-table");
+    const numCols = 18; // Number of columns for the periodic table
+    tableContainer.style.gridTemplateColumns = `repeat(${numCols}, minmax(0, 1fr))`;
 
-// API HAS MF CORS ERROR
+    elements.forEach((element) => {
+      const elementDiv = document.createElement("div");
+      elementDiv.classList.add("element");
+      elementDiv.style.backgroundColor = `#${element.cpkHexColor}`;
 
+      // Calculate the position
+      const column = element.group;
+      const row = element.period;
 
+      elementDiv.style.gridColumn = column;
+      elementDiv.style.gridRow = row;
 
-
-I AM TRYIIINGGG
-
-
-
-
-
-
-
-
-
-
-
-
- fetch("./data.json")
-  .then((Response) => {
-    return Response.json();
-  })
-  .then((data) => {
-    console.log("got the data");
-    data.forEach(element => {
-        const elementDiv = document.createElement("div");
-        // elementDiv.classList.add("element", "bg-gray-400", "p-4", "m-4", "text-center", "w-90", 'h-90');
-        var ec = element.electronicConfiguration;
-        console.log(ec.split(" "));
-        elementDiv.innerHTML = `
-        <h1>${element.electronicConfiguration}</h1>
-        `;
-        // console.log(element.electronicConfiguration);
-        document.body.appendChild(elementDiv);
+      elementDiv.innerHTML = `
+                ${element.symbol}<br>
+                ${element.atomicNumber}
+            `;
+      tableContainer.appendChild(elementDiv);
     });
-
-});
-
-
+  })
+  .catch((error) => console.error("Error fetching data:", error));
 
 
-
-
-
-const sElements = document.getElementsByClassName('s');
-Array.from(sElements).forEach(element => {
-    element.classList.add("bg-fuchsia-400");
-});
-
-const pElements = document.getElementsByClassName("p");
-Array.from(pElements).forEach((element) => {
-  element.classList.add("bg-red-400");
-});
-
-const dElements = document.getElementsByClassName("d");
-Array.from(dElements).forEach((element) => {
-  element.classList.add("bg-cyan-400");
-});
-
-const fElements = document.getElementsByClassName("f");
-Array.from(fElements).forEach((element) => {
-  element.classList.add("bg-lime-400");
-});
+// cleaned up everything and done with a responsive table
